@@ -19,4 +19,4 @@ new DigitalInputBox(el,setting)
  *样式  style:{},
  
  
-* */
+**/
