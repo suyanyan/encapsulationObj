@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div class="content">
+
+</div>
+<button class="get">獲取值</button>
+<button class="clear">請崆</button>
+</body>
+<script src="JS/jquery-3.2.1.min.js"></script>
+<script src="JS/input_box.js"></script>
+<script>
+    var regstr = /^\d*\.{0,1}\d{0,3}$/;
+    var obj = new DigitalInputBox(".content", {
+        type: 'text',
+        num: 6,
+        mouseover:true,
+        autofocus:true,
+        regobj:regstr,
+        style: {
+            width: 55 + 'px',
+            height: 30 + 'px',
+        }
+    }).init();
+
+
+    $("button.get").click(function () {
+        var value = obj.getValue();
+        console.log(value)
+    });
+    $("button.clear").click(function () {
+        obj.clearValue();
+    })
+    var offect = $("button.get").position();
+    console.log(offect)
+</script>
+</html>
