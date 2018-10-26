@@ -11,6 +11,9 @@
 <div class="content">
 
 </div>
+<div class="value">
+
+</div>
 <button class="get">獲取值</button>
 <button class="clear">請崆</button>
 </body>
@@ -28,15 +31,21 @@
             width: 55 + 'px',
             height: 30 + 'px',
         }
-    }).init();
+    });
 
-
+    obj.init();
     $("button.get").click(function () {
         var value = obj.getValue();
-        console.log(value)
+        $(".value").html("");
+        var str="";
+        value.forEach(function (item) {
+            str += `<p><span>第${item.index}个：</span>${item.value == "" ? "无" : item.value}</p>`;
+        });
+        $(".value").html(str);
     });
     $("button.clear").click(function () {
         obj.clearValue();
+        $(".value").html("");
     })
     var offect = $("button.get").position();
     console.log(offect)

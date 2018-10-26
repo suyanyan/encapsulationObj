@@ -43,7 +43,6 @@ DigitalInputBox.prototype.init = function () {
             if (flag) {
                 newValue = this.value;
                 this.onkeydown = function (e) {
-                    console.log(e)
                     if (e.keyCode == 13) {
                         self.el.children("input").eq(index + 1).focus();
                     } else if (e.keyCode == 8 || e.keyCode == 46) {
@@ -70,12 +69,12 @@ DigitalInputBox.prototype.init = function () {
             }
         }
         item.onblur = function (e) {
-            if(this.value == "" || this.value == "undefined"){
+            this.setAttribute("value", this.value);
+           /* if(this.value == "" || this.value == "undefined"){
                 self.el.children("input").eq(index).focus();
             }else{
                 this.setAttribute("value", this.value);
-            }
-            console.log(this.value)
+            }*/
         }
     })
 };
