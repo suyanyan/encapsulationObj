@@ -6,8 +6,6 @@ new DigitalInputBox(el,setting)
 
 /**
 
-setting设置：{
-
  *el:存放内容的容器
  
  *setting：{
@@ -20,6 +18,5 @@ setting设置：{
  
  *样式  style:{},
  
- }
  
 * */
